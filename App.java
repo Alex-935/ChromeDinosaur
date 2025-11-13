@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.*;
 
 public class App {
 
@@ -9,10 +8,16 @@ public class App {
         int boardHeight = 500;
 
         JFrame frame = new JFrame("Chrome Dinosaur");
-        frame.setPositionRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.CLOSE_ON_EXIT);
+        frame.setSize(boardWidth, boardHeight);
+        frame.setLocationRelativeTo(null);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(false);
 
-
-        frame.setVisable();
+        ChromeDinosaur chromeDinosaur = new ChromeDinosaur();
+        frame.add(chromeDinosaur);
+        frame.pack();
+        chromeDinosaur.requestFocus();
+        
+        frame.setVisible(true);
     }
  }
